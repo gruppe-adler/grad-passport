@@ -1,8 +1,8 @@
 # GRAD Passport
 Adds ID cards / passports to the game that can be checked/shown with ACE Interaction. Customizable by mission maker. Different styles per unit.
 
-**Default Passport**
-https://i.imgur.com/ofC6nH8.png
+**Default Passport**  
+![Default Passport Picture](https://i.imgur.com/ofC6nH8.png)
 
 ## Dependencies
 * [CBA_A3](https://github.com/CBATeam/CBA_A3)
@@ -20,7 +20,11 @@ class CfgFunctions {
 };
 ```
 
-If you want to use a different path instead of `node_modules`, prepend your mission's `description.ext` with `#define MODULES_DIRECTORY <YOUR PATH>`
+If you want to use a different path instead of `node_modules`, prepend your mission's `description.ext` with
+
+```
+#define MODULES_DIRECTORY <YOUR PATH>
+```
 
 ### Manually
 1. Create a folder in your mission root folder and name it `node_modules`. Inside that folder, create another folder and name it `grad-passport`.
