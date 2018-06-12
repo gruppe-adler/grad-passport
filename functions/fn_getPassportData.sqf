@@ -21,12 +21,6 @@ if (_placeOfBirth == "") then {
     _passportOwner setVariable [QGVAR(placeOfBirth),_placeOfBirth,true];
 };
 
-private _address = _passportOwner getVariable [QGVAR(address),""];
-if (_address == "") then {
-    _address = ["--",selectRandom GVAR(allLocations)] select (count GVAR(allLocations) > 0);
-    _passportOwner setVariable [QGVAR(address),_address,true];
-};
-
 private _expires = _passportOwner getVariable [QGVAR(expires),""];
 if (_expires == "") then {
     _currentYear = date select 0;
@@ -49,5 +43,7 @@ if (_height == "") then {
     _height = format ["%1 cm",round ([175,185] call BIS_fnc_randomNum)];
     _passportOwner setVariable [QGVAR(height),_height,true];
 };
+
+private _address = _passportOwner getVariable [QGVAR(address),""];
 
 [_firstName,_lastName,_dateOfBirth,_placeOfBirth,_address,_expires,_serial,_height]

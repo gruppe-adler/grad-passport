@@ -17,8 +17,10 @@ private _ctrlLastName = _display displayCtrl GRAD_IDC_LASTNAME;
 private _ctrlDateOfBirth = _display displayCtrl GRAD_IDC_DATEOFBIRTH;
 private _ctrlPlaceOfBirth = _display displayCtrl GRAD_IDC_PLACEOFBIRTH;
 private _ctrlSerial = _display displayCtrl GRAD_IDC_SERIAL;
-private _ctrlAdress = _display displayCtrl GRAD_IDC_ADDRESS;
 private _ctrlExpires = _display displayCtrl GRAD_IDC_EXPIRES;
+
+private _ctrlAdress = _display displayCtrl GRAD_IDC_ADDRESS;
+private _ctrlHeight = _display displayCtrl GRAD_IDC_HEIGHT;
 
 {
     _x params ["_ctrl","_text"];
@@ -36,7 +38,8 @@ private _ctrlExpires = _display displayCtrl GRAD_IDC_EXPIRES;
     [_ctrlLastName,_lastName],
     [_ctrlDateOfBirth,_dateOfBirth],
     [_ctrlPlaceOfBirth,_placeOfBirth],
-    [_ctrlAdress,_address],
-    [_ctrlExpires,_expires],
     [_ctrlSerial,_serial]
+    [_ctrlExpires,_expires],
+    [_ctrlAdress,_address],
+    [_ctrlHeight,_height]
 ];
