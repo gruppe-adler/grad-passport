@@ -69,7 +69,7 @@ class myPassport: grad_passport_defaultPassport {
 If you are using the provided IDCs, your dialog elements will automatically be filled. You can use the defines [here](https://github.com/gruppe-adler/grad-passport/blob/master/dialog/defines.hpp). These have to be text (type=0) or structured text (type=13). Example:
 
 ```sqf
-class myPassport {m
+class myPassport {
     class Controls {
         class height: RscText {
             idc = GRAD_IDC_HEIGHT;
