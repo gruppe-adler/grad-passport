@@ -14,20 +14,20 @@ private _checkPassportAction = [
      QGVAR(checkPassportAction),
      "Check ID Card",
      "",
-     {[ACE_player,_this select 0,true] call FUNC(receiveShowPassport)},
+     {[FUNC(receiveShowPassport),[ACE_player,_this select 0,true]] call CBA_fnc_execNextFrame},
      {!alive (_this select 0) || (_this select 0) getVariable ["ace_captives_isHandcuffed",false] || (_this select 0) getVariable ["ACE_isUnconscious",false] || (_this select 0) getVariable ["ace_captives_isSurrendering",false]}
  ] call ace_interact_menu_fnc_createAction;
 ["CAManBase",0,["ACE_MainActions"],_checkPassportAction,true] call ace_interact_menu_fnc_addActionToClass;
 
 // SPIEL KACKT AB
-/* private _checkOwnPassport = [
+private _checkOwnPassport = [
      QGVAR(checkOwnPassport),
      "Check ID Card",
      "",
-     {[ACE_player,_this select 0,true] call FUNC(receiveShowPassport)},
-     {!((_this select 0) getVariable ["ace_captives_isSurrendering",false])}
+     {[FUNC(receiveShowPassport),[ACE_player,_this select 0,true]] call CBA_fnc_execNextFrame},
+     {!((_this select 0) getVariable ["ace_captives_isSurrendering",false]) && !((_this select 0) getVariable ["ace_captives_isHandcuffed",false])}
  ] call ace_interact_menu_fnc_createAction;
-["CAManBase",1,["ACE_SelfActions","ACE_Equipment"],_checkOwnPassport,true] call ace_interact_menu_fnc_addActionToClass; */
+["CAManBase",1,["ACE_SelfActions","ACE_Equipment"],_checkOwnPassport,true] call ace_interact_menu_fnc_addActionToClass;
 
 if (isServer) then {
     disableSerialization;
