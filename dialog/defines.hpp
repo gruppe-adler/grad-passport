@@ -15,8 +15,12 @@
 #define GRAD_IDC_SERIAL                                 42005
 #define GRAD_IDC_EXPIRES                                42006
 
-#define GRAD_IDC_ADDRESS                                42007
-#define GRAD_IDC_HEIGHT                                 42008
+#define GRAD_IDC_HEIGHT                                 42007
+#define GRAD_IDC_EYECOLOR                               42008
+#define GRAD_IDC_ADDRESS                                42009
+#define GRAD_IDC_NATIONALITY                            42010
+#define GRAD_IDC_MISC1                                  42011
+#define GRAD_IDC_MISC2                                  42012
 
 
 // DIMENSIONS, POSITIONS SHOWPASSPORT DISPLAY ==================================

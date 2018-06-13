@@ -44,6 +44,16 @@ if (_height == "") then {
     _passportOwner setVariable [QGVAR(height),_height,true];
 };
 
-private _address = _passportOwner getVariable [QGVAR(address),""];
+private _eyeColor = _passportOwner getVariable [QGVAR(eyeColor),""];
+if (_eyeColor == "") then {
+    _eyeColor = ["blue",0.55,"brown",0.35,"green",0.10] call BIS_fnc_selectRandomWeighted;
+    _passportOwner setVariable [QGVAR(eyeColor),_eyeColor,true];
+};
 
-[_firstName,_lastName,_dateOfBirth,_placeOfBirth,_address,_expires,_serial,_height]
+private _address = _passportOwner getVariable [QGVAR(address),"--"];
+private _nationality = _passportOwner getVariable [QGVAR(nationality),"--"];
+private _misc1 = _passportOwner getVariable [QGVAR(misc1),"--"];
+private _misc2 = _passportOwner getVariable [QGVAR(misc2),"--"];
+
+
+[_firstName,_lastName,_dateOfBirth,_placeOfBirth,_address,_expires,_serial,_height,_eyeColor,_nationality,_misc1,_misc2]

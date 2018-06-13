@@ -82,19 +82,21 @@ class myPassport {
 
 These are used in the default passport:
 
-Usage                                    | Variable     | IDC
------------------------------------------|--------------|------
-the dialog classname that this unit uses | passportRsc  | -
-first name (taken from unit's identity)  | -            | 42001
-last name (taken from unit's identity)   | -            | 42001
-date of birth                            | dateOfBirth  | 42003
-place of birth                           | placeOfBirth | 42004
-serial                                   | serial       | 42005
-expiry date                              | expires      | 42006
-
-These are unused in the default passport. With the exception of *height*, these are not randomly assigned to units, but have to be set manually:
-
-Usage   | Variable | IDC
---------|----------|------
-address | address  | 42007
-height  | height   | 42008
+Usage                                                                          | Variable     | IDC
+-------------------------------------------------------------------------------|--------------|------
+**These are used in the default passport:**                                    |              |
+the dialog classname that this unit uses                                       | passportRsc  | -
+first name (taken from unit's identity)                                        | -            | 42001
+last name (taken from unit's identity)                                         | -            | 42001
+date of birth                                                                  | dateOfBirth  | 42003
+place of birth                                                                 | placeOfBirth | 42004
+serial                                                                         | serial       | 42005
+expiry date                                                                    | expires      | 42006
+**These are unused in the default passport, but are still randomly assigned:** |              |
+height                                                                         | height       | 42007
+eye color                                                                      | eyeColor     | 42008
+**These have to be assigned manually:**                                        |              |
+address                                                                        | address      | 42009
+nationality                                                                    | nationality  | 42010
+use for anything                                                               | misc1        | 42011
+use for anything                                                               | misc2        | 42012
