@@ -127,7 +127,8 @@ scheme (optional) | array - determines which position is a (random) number or le
 Example  
 ```sqf
 [9,["Y","W",["H","L","K"],true,false," ",true,true,false]] call grad_passport_fnc_generateSerial;
-// Returns a 9 character serial that starts with the letters YW, continues with either H,L or K, a random number and a random letter. After a space, two more numbers and a letter follow.
+// Returns a 9 character serial that starts with the letters YW, continues with either H,L or K,
+// a random number and a random letter. After a space, two more numbers and a letter follow.
 // Possible outcome:
 // YWL5C 12J
 ```
