@@ -114,7 +114,7 @@ Here are some more things that might help you with customizing your passports.
 ### grad_passport_fnc_generateSerial
 This function can generate a random serial for your passport.
 
-Syntax  
+**Syntax**  
 ```sqf
 [length,scheme] call grad_passport_fnc_generateSerial;
 ```
@@ -124,11 +124,9 @@ Parameter         | Usage
 length            | number - length of the serial to generate
 scheme (optional) | array - determines which position is a (random) number or letter; use *string* to dictate the positions value; use *bool* to decide between random letters (false) and numbers (true); use array of *strings* to randomly select one of the provided strings
 
-Example  
+**Example**  
+Returns a 9 character serial that starts with the letters YW, continues with either H,L or K, a random number and a random letter. After a space, two more numbers and a letter follow.  
 ```sqf
 [9,["Y","W",["H","L","K"],true,false," ",true,true,false]] call grad_passport_fnc_generateSerial;
-// Returns a 9 character serial that starts with the letters YW, continues with either H,L or K,
-// a random number and a random letter. After a space, two more numbers and a letter follow.
-// Possible outcome:
-// YWL5C 12J
+// Possible outcome: YWL5C 12J
 ```
