@@ -45,7 +45,7 @@ To check your own passport, ACE-self-interact and go to *Equipment >> Check ID C
 ## Implementation
 
 ### Personal Details (Variables)
-By default, every unit is assigned a random date of birth, place of birth (taken from all cities on the map), date of expiry, serial, and height. You can overwrite these if you like. All of these variables are saved in the unit and have the prefix `grad_passport_`. Data type of all variables has to be *STRING*.
+By default, every unit is assigned some random personal details (as soon as his passport is viewed for the first time). You can overwrite these if you like. All of these variables are saved in the unit and have the prefix `grad_passport_`. Data type of all variables has to be *STRING*.
 
 So for example if I wanted to set the date of birth for a unit, I would use:
 
@@ -78,6 +78,13 @@ class myPassport {
 };
 ```
 
+To assign the custom passport to a unit you need:
+
+```sqf
+_unit setVariable ["grad_passport_passportRsc","myPassport"];
+```
+
+
 ### Available Properties
 
 These are used in the default passport:
@@ -100,3 +107,27 @@ address                                                                        |
 nationality                                                                    | nationality  | 42010
 use for anything                                                               | misc1        | 42011
 use for anything                                                               | misc2        | 42012
+
+## Some Helpful Things
+Here are some more things that might help you with customizing your passports.
+
+### grad_passport_fnc_generateSerial
+This function can generate a random serial for your passport.
+
+Syntax  
+```sqf
+[length,scheme] call grad_passport_fnc_generateSerial;
+```
+
+Parameter         | Usage
+------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+length            | number - length of the serial to generate
+scheme (optional) | array - determines which position is a (random) number or letter; use *string* to dictate the positions value; use *bool* to decide between random letters (false) and numbers (true); use array of *strings* to randomly select one of the provided strings
+
+Example  
+```sqf
+[9,["Y","W",["H","L","K"],true,false," ",true,true,false]] call grad_passport_fnc_generateSerial;
+// Returns a 9 character serial that starts with the letters YW, continues with either H,L or K, a random number and a random letter. After a space, two more numbers and a letter follow.
+// Possible outcome:
+// YWL5C 12J
+```

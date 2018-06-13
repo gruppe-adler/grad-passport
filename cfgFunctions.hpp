@@ -6,6 +6,7 @@ class grad_passport {
     class passport {
         file = MODULES_DIRECTORY\grad-passport\functions;
 
+        class generateSerial {};
         class getPassportData {};
         class initModule {postInit = 1;};
         class onShowDialogClose {};

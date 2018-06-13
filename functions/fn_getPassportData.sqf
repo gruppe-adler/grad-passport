@@ -2,8 +2,7 @@
 
 params [["_passportOwner",objNull]];
 
-private _letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-private _numbers = ["1","2","3","4","5","6","7","8","9","0"];
+
 
 (([_passportOwner] call ace_common_fnc_getName) splitstring " ") params [["_firstName","--"],["_lastName","--"]];
 
@@ -31,10 +30,7 @@ if (_expires == "") then {
 
 private _serial = _passportOwner getVariable [QGVAR(serial),""];
 if (_serial == "") then {
-    {
-        _serial = _serial + (selectRandom ([_letters,_numbers] select _x));
-    } forEach [0,1,1,0,0,0,0,1,1,1];
-    _serial = toUpper _serial;
+    _serial = [10,[false,true,true,false,false,false,false,true,true,true]] call FUNC(generateSerial);
     _passportOwner setVariable [QGVAR(serial),_serial,true];
 };
 
