@@ -76,6 +76,7 @@ class GVAR(defaultPassport) {
     idd = GRAD_IDD_VIEWPASSPORT;
     movingEnable = true;
     enableSimulation = true;
+    onUnload = QUOTE(_this call FUNC(onViewDialogClose));
 
     class ControlsBackground {
         class BGPic: GVAR(RscPicture) {

@@ -7,6 +7,8 @@ params [["_target",objNull],["_passportOwner",objNull]];
 private _display = (findDisplay 46) createDisplay QGVAR(displayShowPassport);
 _display setVariable [QGVAR(displayTarget),_target];
 
+[ACE_player,"gestureFreeze"] call ace_common_fnc_doGesture;
+
 [_target,_passportOwner,true] remoteExec [QFUNC(receiveShowPassport),_target,false];
 
 // handle death, unconsciousness, distance

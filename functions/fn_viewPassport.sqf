@@ -10,8 +10,9 @@ if !(_showing) exitWith {
 
 private _passportConfig = (missionConfigFile >> (_passportOwner getVariable [QGVAR(passportRsc),QGVAR(defaultPassport)]));
 private _display = (findDisplay 46) createDisplay (configName _passportConfig);
+_display setVariable [QGVAR(passportOwner),_passportOwner];
 
-([_passportOwner] call FUNC(getPassportData)) params ["_firstName","_lastName","_dateOfBirth","_placeOfBirth","_address","_expires","_serial","_height","_eyeColor","_nationality"];
+([_passportOwner] call FUNC(getPassportData)) params ["_firstName","_lastName","_dateOfBirth","_placeOfBirth","_address","_expires","_serial","_height","_eyeColor","_nationality","_misc1","_misc2"];
 private _ctrlFirstName = _display displayCtrl GRAD_IDC_FIRSTNAME;
 private _ctrlLastName = _display displayCtrl GRAD_IDC_LASTNAME;
 private _ctrlDateOfBirth = _display displayCtrl GRAD_IDC_DATEOFBIRTH;
