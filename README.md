@@ -66,14 +66,25 @@ class myPassport: grad_passport_defaultPassport {
 };
 ```
 
+If you are not inheriting from the default passport, make sure to use the correct IDD and onUnload function:
+```sqf
+class myPassport {
+    idd = 42000;        // GRAD_IDD_VIEWPASSPORT
+    onUnload = "_this call grad_passport_fnc_onViewDialogClose";
+    // ...
+};
+```
+
 If you are using the provided IDCs, your dialog elements will automatically be filled. You can use the defines [here](https://github.com/gruppe-adler/grad-passport/blob/master/dialog/defines.hpp). These have to be text (type=0) or structured text (type=13). Example:
 
 ```sqf
 class myPassport {
+    //...
     class Controls {
         class height: RscText {
             idc = GRAD_IDC_HEIGHT;
         };
+        //...
     };
 };
 ```
