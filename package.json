@@ -1,0 +1,10 @@
+{
+    "name": "grad-passport",
+    "contributors": [
+        {
+            "name": "McDiod"
+        }
+    ],
+    "description": "Adds ID cards / passports to the game that can be checked/shown with ACE Interaction.",
+    "version": "0.0.1"
+}
