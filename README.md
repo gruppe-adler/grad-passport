@@ -8,7 +8,7 @@ Adds ID cards / passports to the game that can be checked/shown with ACE Interac
 * [CBA_A3](https://github.com/CBATeam/CBA_A3)
 * [ACE3](https://github.com/acemod/ACE3)
 
-## Installation
+# Installation
 
 Append the following lines of code to the `description.ext`:
 
@@ -26,25 +26,25 @@ If you want to use a different path instead of `node_modules`, prepend your miss
 #define MODULES_DIRECTORY <YOUR PATH>
 ```
 
-### Manually
+## Manually
 1. Create a folder in your mission root folder and name it `node_modules`. Inside that folder, create another folder and name it `grad-passport`.
 2. Download the [latest version](https://github.com/gruppe-adler/grad-passport/releases) of this module, then put it into the folder you just created.
 
-### Via `npm`
+## Via `npm`
 _for details about what npm is and how to use it, look it up on [npmjs.com](https://www.npmjs.com/)_
 
 1. Install package `grad-passport` : `npm install --save grad-passport`
 
-## Usage
+# Usage
 To show your passport to someone, ACE-interact with a unit and select *Show ID Card*. A dialog will appear that will tell you if that unit is currently looking at your passport and allow you to stop showing it, if you decide they have seen enough.
 
 To check the passport of a unit that does not want to voluntarily show it, ACE-interact with them and select *Check ID Card*. This only works if they are unconscious, handcuffed or surrendering.
 
 To check your own passport, ACE-self-interact and go to *Equipment >> Check ID Card*.
 
-## Implementation
+# Implementation
 
-### Personal Details (Variables)
+## Personal Details (Variables)
 By default, every unit is assigned some random personal details (as soon as his passport is viewed for the first time). You can overwrite these if you like. All of these variables are saved in the unit and have the prefix `grad_passport_`. Data type of all variables has to be *STRING*.
 
 So for example if I wanted to set the date of birth for a unit, I would use:
@@ -53,7 +53,7 @@ So for example if I wanted to set the date of birth for a unit, I would use:
 _unit setVariable ["grad_passport_dateOfBirth","12.07.1984"];
 ```
 
-### Custom Passports
+## Custom Passports
 You can create your own passports just like you would create any dialog. You can also inherit from the default passport if you just want to make some small changes. For example, if I wanted to use a different background, I would do this:
 
 ```sqf
@@ -96,7 +96,7 @@ _unit setVariable ["grad_passport_passportRsc","myPassport"];
 ```
 
 
-### Available Properties
+## Available Properties
 
 These are used in the default passport:
 
@@ -119,10 +119,10 @@ nationality                                                                    |
 use for anything                                                               | misc1        | 42011
 use for anything                                                               | misc2        | 42012
 
-## Some Helpful Things
+# Some Helpful Things
 Here are some more things that might help you with customizing your passports.
 
-### grad_passport_fnc_generateSerial
+## grad_passport_fnc_generateSerial
 This function can generate a random serial for your passport.
 
 **Syntax**  
@@ -141,3 +141,8 @@ Returns a 9 character serial that starts with the letters YW, continues with eit
 [9,["Y","W",["H","L","K"],true,false," ",true,true,false]] call grad_passport_fnc_generateSerial;
 // Possible outcome: YWL5C 12J
 ```
+
+## Default Passport Background
+Here is the default passport background if you want to use it as a template. Dimensions are 1024x512, but there is a transparent frame giving the actual passport only about 830x500.
+
+![](https://i.imgur.com/H8UvbYm.png)
