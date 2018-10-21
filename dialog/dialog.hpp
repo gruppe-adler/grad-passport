@@ -2,7 +2,7 @@
     #define MODULES_DIRECTORY node_modules
 #endif
 
-#include "script_component.hpp"
+#include "dialog_macros.hpp"
 
 #include "baseDefines.hpp"
 #include "defines.hpp"
