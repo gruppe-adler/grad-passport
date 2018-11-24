@@ -4,7 +4,7 @@
 params [["_target",objNull],["_passportOwner",objNull],["_state",-1]];
 
 // user is currently remote controlling AI
-if (ACE_player != player) exitWith {};
+if (ACE_player != _passportOwner) exitWith {};
 
 if (_state < 0) exitWith {ERROR("State -1")};
 
