@@ -21,6 +21,7 @@ private _infoText = _display displayCtrl GRAD_IDC_SHOWPASSPORT_INFOTEXT;
 _infoText ctrlSetText format [_stateText,name _target];
 
 playSound "hint";
+["GRAD_passport_showStateChanged", [_target, _passportOwner, _state]] call CBA_fnc_globalEvent;
 
 if (_state > 0) then {
 
