@@ -5,7 +5,7 @@ private _showPassportAction = [
      QGVAR(showPassportAction),
      "Show ID Card",
      "",
-     {_this call FUNC(showPassport)},
+     {[FUNC(showPassport),_this] call CBA_fnc_execNextFrame},
      {alive (_this select 0) && !((_this select 0) getVariable ["ACE_isUnconscious",false])}
  ] call ace_interact_menu_fnc_createAction;
 ["CAManBase",0,["ACE_MainActions"],_showPassportAction,true] call ace_interact_menu_fnc_addActionToClass;
