@@ -6,6 +6,9 @@ params [["_passportOwner",objNull]];
 
 (([_passportOwner] call ace_common_fnc_getName) splitstring " ") params [["_firstName","--"],["_lastName","--"]];
 
+_firstName = _passportOwner getVariable [QGVAR(firstName), _firstName];
+_lastName = _passportOwner getVariable [QGVAR(lastName), _lastName];
+
 private _dateOfBirth = _passportOwner getVariable [QGVAR(dateOfBirth),""];
 if (_dateOfBirth == "") then {
     _currentYear = date select 0;
