@@ -45,7 +45,7 @@ To check your own passport, ACE-self-interact and go to *Equipment >> Check ID C
 # Implementation
 
 ## Personal Details (Variables)
-By default, every unit is assigned some random personal details (as soon as his passport is viewed for the first time). You can overwrite these if you like. All of these variables are saved in the unit and have the prefix `grad_passport_`. Data type of all variables has to be *STRING*.
+By default, every unit is assigned some random personal details (as soon as his passport is viewed for the first time). You can overwrite these if you like. All of these variables are saved in the unit and have the prefix `grad_passport_`. Data type of all variables has to be *STRING*. See [Available Properties](#available-properties) for all available variables.
 
 So for example if I wanted to set the date of birth for a unit, I would use:
 
@@ -95,7 +95,6 @@ To assign the custom passport to a unit you need:
 _unit setVariable ["grad_passport_passportRsc","myPassport"];
 ```
 
-
 ## Available Properties
 
 These are used in the default passport:
@@ -104,8 +103,8 @@ Usage                                                                          |
 -------------------------------------------------------------------------------|--------------|------
 **These are used in the default passport:**                                    |              |
 the dialog classname that this unit uses                                       | passportRsc  | -
-first name (taken from unit's identity)                                        | -            | 42001
-last name (taken from unit's identity)                                         | -            | 42001
+first name (default taken from unit's identity)                                | firstName    | 42001
+last name (default taken from unit's identity)                                 | lastName     | 42001
 date of birth                                                                  | dateOfBirth  | 42003
 place of birth                                                                 | placeOfBirth | 42004
 serial                                                                         | serial       | 42005
